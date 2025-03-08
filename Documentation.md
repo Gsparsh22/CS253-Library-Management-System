@@ -1,11 +1,11 @@
 ---
 # Library Management System Documentation
 
-This document provides a detailed explanation of the C++ code for the Library Management System, including its classes, methods, and overall functionality.
+This document provides a detailed explanation for the Library Management System, including its classes, methods, and overall functionality.
 
 ## Overview
 
-The program is a console-based library management system written in C++11. It manages books and users with different roles (students, faculty, librarians), handling tasks like borrowing, returning, reserving books, and maintaining user accounts. Data is stored in CSV files for persistence.
+The program is a console-based library management system written in C++. It manages books and users with different roles (students, faculty, librarians), handling tasks like borrowing, returning, reserving books, and maintaining user accounts. Data is stored in CSV files for persistence.
 
 ## Classes
 
