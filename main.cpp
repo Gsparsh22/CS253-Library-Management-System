@@ -189,10 +189,16 @@ public:
         }
         if (!user->canBorrow()) { cout << "You cannot borrow books at this time.\n"; return; }
         
+        bool wasReservedByUser = (book->getStatus() == "reserved" && book->getReservedBy() == user->getUserID());
         user->getAccount().borrowBook(ISBN);
         book->setStatus("borrowed");
         book->setReservedBy("");  // Clear the reservation
         cout << "Book borrowed successfully.\n";
+        
+        if (wasReservedByUser) {
+            int newReservedCount = getReservedBooksCount(user->getUserID());
+            cout << "Reservation fulfilled. Remaining reserved books: " << newReservedCount << endl;
+        }
     }
 
     void returnBook(User* user, const string& ISBN) {
