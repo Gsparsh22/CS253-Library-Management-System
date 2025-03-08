@@ -109,4 +109,3 @@ Feel free to fork and submit pull requests for:
 - Feature enhancements
 - Improved error handling
 - GUI implementation
-```
