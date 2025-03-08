@@ -51,3 +51,5 @@ library_management_system.exe
 3. To login:
    - Enter a user ID (e.g., "S1" for student, "F1" for faculty, "L1" for librarian)
    - Type "exit" to quit the program
+
+Further details on the functionality of the program can be found in Documentation.md
