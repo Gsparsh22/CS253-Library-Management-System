@@ -1,5 +1,4 @@
-# CS253-Library-Management-SystemBased on your request to "change the readme to markdown also," I’ll assume you want the `readme.md` file provided in markdown format. Since the file is already in markdown as shown below, I’ll present it fully formatted and ready for use. Here is the complete `readme.md` in markdown:
-
+# CS253-Library-Management-System
 ---
 
 # Library Management System
@@ -78,5 +77,3 @@ The program uses CSV files to store data, which are created or updated when the 
 - No external libraries are required beyond the C++ Standard Library.
 
 ---
-
-This `readme.md` is already in markdown format, as requested, and can be directly copied into your project. Let me know if you need any additional changes!
