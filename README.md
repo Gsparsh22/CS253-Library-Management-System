@@ -1,79 +1,112 @@
-# CS253-Library-Management-System
----
-
+```
 # Library Management System
 
-This is a simple library management system implemented in C++. It allows users to borrow, return, and reserve books, as well as manage their accounts. Different user roles (students, faculty, and librarians) have specific privileges, such as borrowing limits or administrative functions like adding and removing books and users.
+## Overview
+This is a C++ based Library Management System that manages books, users, borrowing, returning, reservations, and fines. It supports three types of users:
+- Students (max 3 books, 15-day loan period, fines applicable)
+- Faculty (max 5 books, 30-day loan period, no fines)
+- Librarians (cannot borrow, can manage books and users)
 
-## Compilation
+The system persists data in CSV files and includes features like book searching, reservation system, and fine management.
 
-To compile the program, you need a C++ compiler that supports C++11 or later (e.g., g++). Use the following command in your terminal or command prompt:
-
-```bash
-g++ -std=c++11 -o library_system main.cpp
-```
-
-- The `-std=c++11` flag ensures support for C++11 features like `chrono` used in the code.
-- This command compiles `main.cpp` into an executable named `library_system`.
-
-## Execution
-
-To run the program after compilation, use the following command:
-
-```bash
-./library_system
-```
-
-On Windows, if using a different compiler or environment, you might need to run:
-
-```bash
-library_system.exe
-```
-
-## Usage
-
-1. **Login**: 
-   - When the program starts, enter your `userID` to log in.
-   - Type `exit` to quit the program at the login prompt.
-   - Example userIDs from the default data: `S1` (student), `F1` (faculty), `L1` (librarian).
-
-2. **Student/Faculty Menu**:
-   - **Options**:
-     - **Borrow book**: Enter an ISBN to borrow a book (e.g., `ISBN1`).
-     - **Return book**: Return a borrowed book by ISBN.
-     - **View borrowed books**: See the list of books you’ve borrowed.
-     - **View fines**: Check your unpaid fines (students only).
-     - **Pay fines**: Clear your fines (students only).
-     - **Reserve book**: Reserve a borrowed book by ISBN.
-     - **Search books**: Search by title or author.
-     - **Logout**: Return to the login screen.
-   - Follow the prompts to enter required information (e.g., ISBNs).
-
-3. **Librarian Menu**:
-   - **Options**:
-     - **Add book**: Enter book details (title, author, publisher, year, ISBN).
-     - **Remove book**: Remove a book by ISBN.
-     - **Add user**: Add a new user with a userID, name, and role.
-     - **Remove user**: Remove a user by userID.
-     - **View all books**: List all books in the library.
-     - **View all users**: List all registered users.
-     - **Search books**: Search by title or author.
-     - **Logout**: Return to the login screen.
-
-## Data Persistence
-
-The program uses CSV files to store data, which are created or updated when the program runs:
-
-- `books.csv`: Stores book details (ISBN, title, author, publisher, year, status, reservedBy).
-- `users.csv`: Stores user details (userID, name, role).
-- `borrowings.csv`: Tracks borrowed books (userID, ISBN, borrow timestamp).
-- `fines.csv`: Records unpaid fines (userID, fine amount).
-
-- **Note**: If these files don’t exist when the program starts, it initializes with default books and users. Data is saved to these files when the program exits.
+## Features
+- Book management (add/remove books)
+- User management (add/remove users)
+- Borrowing and returning books
+- Book reservation system
+- Fine calculation and payment (for students)
+- Search functionality
+- Persistent storage in CSV files
 
 ## Prerequisites
+- C++11 compatible compiler (g++, clang++, etc.)
+- Standard C++ libraries
 
-- A C++ compiler supporting C++11 (e.g., g++ version 4.8 or later).
-- No external libraries are required beyond the C++ Standard Library.
+## File Structure
+- `main.cpp` - Main source code file
+- `books.csv` - Stores book data
+- `users.csv` - Stores user data
+- `borrowings.csv` - Stores borrowing records
+- `fines.csv` - Stores fine records
 
----
+## Compilation Instructions
+To compile the program, use one of the following commands:
+
+### Using g++
+```bash
+g++ main.cpp -o library_management_system
+```
+
+## Execution Instructions
+1. After compilation, run the program using:
+```bash
+library_management_system.exe
+```
+
+2. The program will:
+   - Load existing data from CSV files if present
+   - Create default data if no CSV files exist
+   - Present a login prompt
+
+3. To login:
+   - Enter a user ID (e.g., "S1" for student, "F1" for faculty, "L1" for librarian)
+   - Type "exit" to quit the program
+
+## Default Users
+The system creates these default users if no users.csv exists:
+- Students: S1-S5 (Student1-Student5)
+- Faculty: F1-F3 (Faculty1-Faculty3)
+- Librarian: L1 (Librarian1)
+
+## Default Books
+The system creates these default books if no books.csv exists:
+- Book1 (ISBN1) - Author1, Pub1, 2020
+- Book2 (ISBN2) - Author2, Pub2, 2021
+- Book3 (ISBN3) - Author3, Pub3, 2019
+- Book4 (ISBN4) - Author4, Pub4, 2022
+- Book5 (ISBN5) - Author5, Pub5, 2018
+
+## Usage
+### Student/Faculty Menu
+1. Borrow book
+2. Return book
+3. View borrowed books
+4. View fines
+5. Pay fines
+6. Reserve book
+7. Search books
+8. Logout
+
+### Librarian Menu
+1. Add book
+2. Remove book
+3. Add user
+4. Remove user
+5. View all books
+6. View all users
+7. Search books
+8. Logout
+
+## Data Persistence
+- Data is automatically saved to CSV files when the program exits
+- Files are loaded automatically when the program starts
+- CSV files must be in the same directory as the executable
+
+## Limitations
+- No password authentication
+- Simple fine system (10 rupees/day for students only)
+- No GUI interface
+- Basic error handling
+
+## Troubleshooting
+- Ensure CSV files are writable in the execution directory
+- Check compiler version supports C++11
+- Verify sufficient memory for larger datasets
+
+## Contributing
+Feel free to fork and submit pull requests for:
+- Bug fixes
+- Feature enhancements
+- Improved error handling
+- GUI implementation
+```

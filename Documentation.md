@@ -1,5 +1,4 @@
-
-```markdown
+---
 # Library Management System Documentation
 
 This document provides a detailed explanation of the C++ code for the Library Management System, including its classes, methods, and overall functionality.
